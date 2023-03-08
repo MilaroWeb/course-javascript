@@ -619,6 +619,9 @@ toCelsius();
 <br>
 <br>
 
+<br>
+<br>
+
 # **FUNCION EN VARIABLE**
 
 Una funcion en JS se puede definir como una expression, y esta se puede almacenar en una variable, se recomienda usar **_const_**
@@ -653,6 +656,9 @@ function myFunction(a, b) {
 let x = myFunction(4, 3) * 2; // x = 24
 document.getElementById("demo").innerHTML = x;
 ```
+
+<br>
+<br>
 
 # **ARROW FUNCTION**
 
@@ -1763,7 +1769,9 @@ const points = new Array(40); //result: undefined, ya que (since) crea 40 elemen
    console.log(fruits); //result: ['Banana', 'Orange', 'Apple', 'Mango', 'Kiwi']
    ```
 
-   > Reemplazar un elemento
+   <br>
+
+   > **_Reemplazar un elemento_**
 
    ```javascript
    const fruits = ["Banana", "Orange", "Apple", "Mango"];
@@ -2212,6 +2220,10 @@ let y = new Boolean(false);
    ```
 
    > Al comparar un string con un number, JS convertirá el string en un number, si no fuera un number, saldría NaN, lo que siempre es false
+
+   ### **_? = si es entonces..._**
+
+   ### **_: = si no es entonces..._**
 
    <br>
    <br>
@@ -4420,18 +4432,18 @@ Este ejemplo encuentra todos los tag <p> que estan dentro de un div con id = "ma
 
 ```html
 <div id="main">
-<p>Finding HTML Elements by Tag Name</p>
-<p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+   <p>Finding HTML Elements by Tag Name</p>
+   <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
 </div>
 
 <p id="demo"></p>
 
 <script>
-const x = document.getElementById("main");   // coloca el elemento en un objeto x
-const y = x.getElementsByTagName("p"); // busca todos los p del objeto x
+   const x = document.getElementById("main"); // coloca el elemento en un objeto x
+   const y = x.getElementsByTagName("p"); // busca todos los p del objeto x
 
-document.getElementById("demo").innerHTML =
-'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML; // los ubica como un array
+   document.getElementById("demo").innerHTML = 'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML; // los ubica como un array
+</script>
 ```
 
 <br>
@@ -4446,9 +4458,9 @@ Este example ubicará los elementos por su clase
 <p id="demo"></p>
 
 <script>
-const x = document.getElementsByClassName("intro");
-document.getElementById("demo").innerHTML =
-'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML;  // ubica a los elementos como si fuera un array
+   const x = document.getElementsByClassName("intro");
+   document.getElementById("demo").innerHTML = 'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML; // ubica a los elementos como si fuera un array
+</script>
 ```
 
 <br>
@@ -4458,22 +4470,24 @@ Este example muestra como utilizar los hijos de un element
 
 ```html
 <form id="frm1" action="/action_page.php">
-  First name: <input type="text" name="fname" value="Donald"><br>
-  Last name: <input type="text" name="lname" value="Duck"><br><br>
-  <input type="submit" value="Submit">
-</form>  <!-- form tiene 3 hijos -->
+   First name: <input type="text" name="fname" value="Donald" /><br />
+   Last name: <input type="text" name="lname" value="Duck" /><br /><br />
+   <input type="submit" value="Submit" />
+</form>
+<!-- form tiene 3 hijos -->
 
 <p>These are the values of each element in the form:</p>
 
 <p id="demo"></p>
 
 <script>
-const x = document.forms["frm1"];   // selecciona form
-let text = "";
-for (let i = 0; i < x.length ;i++) {
-  text += x.elements[i].value + "<br>";
-}  // para acceder a cada hijo, se pone elements[i]
-document.getElementById("demo").innerHTML = text;
+   const x = document.forms["frm1"]; // selecciona form
+   let text = "";
+   for (let i = 0; i < x.length; i++) {
+      text += x.elements[i].value + "<br>";
+   } // para acceder a cada hijo, se pone elements[i]
+   document.getElementById("demo").innerHTML = text;
+</script>
 ```
 
 <br>
@@ -4551,25 +4565,26 @@ function validateForm() {
 Este example muestra un message cuando se presiona un button y no se ha llenado el input con la condition required
 
 ```html
-<input id="numb">
+<input id="numb" />
 
 <button type="button" onclick="myFunction()">Submit</button>
 
 <p id="demo"></p>
 
 <script>
-function myFunction() {
-  // Get the value of the input field with id="numb"
-  let x = document.getElementById("numb").value;
-  // If x is Not a Number or less than one or greater than 10
-  let text;
-  if (isNaN(x) || x < 1 || x > 10) {
-    text = "Input not valid";
-  } else {
-    text = "Input OK";
-  }
-  document.getElementById("demo").innerHTML = text;
-}
+   function myFunction() {
+      // Get the value of the input field with id="numb"
+      let x = document.getElementById("numb").value;
+      // If x is Not a Number or less than one or greater than 10
+      let text;
+      if (isNaN(x) || x < 1 || x > 10) {
+         text = "Input not valid";
+      } else {
+         text = "Input OK";
+      }
+      document.getElementById("demo").innerHTML = text;
+   }
+</script>
 ```
 
 <br>
@@ -4621,9 +4636,10 @@ Para cambiar el style de un HTML element se usa la sgt syntax
 <p id="p2">Hello World!</p>
 
 <script>
-document.getElementById("p2").style.color = "blue";
-document.getElementById("p2").style.fontFamily = "Arial";
-document.getElementById("p2").style.fontSize = "larger";
+   document.getElementById("p2").style.color = "blue";
+   document.getElementById("p2").style.fontFamily = "Arial";
+   document.getElementById("p2").style.fontSize = "larger";
+</script>
 ```
 
 <br>
@@ -4727,16 +4743,18 @@ Asignar eventos a HTML elements, se pueden usar atributos
 Asignar eventos pero desde el DOM HTML
 
 ```html
-<button id="myBtn">Try it</button>  <!-- No es necesario onclick -->
+<button id="myBtn">Try it</button>
+<!-- No es necesario onclick -->
 
 <p id="demo"></p>
 
 <script>
-document.getElementById("myBtn").onclick = displayDate;
+   document.getElementById("myBtn").onclick = displayDate;
 
-function displayDate() {
-  document.getElementById("demo").innerHTML = Date();
-}
+   function displayDate() {
+      document.getElementById("demo").innerHTML = Date();
+   }
+</script>
 ```
 
 <br>
@@ -4745,21 +4763,22 @@ function displayDate() {
 
 ```html
 <body onload="checkCookies()">
+   <h2>JavaScript HTML Events</h2>
 
-<h2>JavaScript HTML Events</h2>
+   <p id="demo"></p>
 
-<p id="demo"></p>
-
-<script>
-function checkCookies() {
-  var text = "";
-  if (navigator.cookieEnabled == true) {
-    text = "Cookies are enabled.";
-  } else {
-    text = "Cookies are not enabled.";
-  }
-  document.getElementById("demo").innerHTML = text;
-}
+   <script>
+      function checkCookies() {
+         var text = "";
+         if (navigator.cookieEnabled == true) {
+            text = "Cookies are enabled.";
+         } else {
+            text = "Cookies are not enabled.";
+         }
+         document.getElementById("demo").innerHTML = text;
+      }
+   </script>
+</body>
 ```
 
 <br>
@@ -4912,11 +4931,12 @@ Examples:
 <button id="myBtn">Try it</button>
 
 <script>
-document.getElementById("myBtn").addEventListener("click", myFunction);
+   document.getElementById("myBtn").addEventListener("click", myFunction);
 
-function myFunction() {
-  alert ("Hello World!");
-}
+   function myFunction() {
+      alert("Hello World!");
+   }
+</script>
 ```
 
 <br>
@@ -5473,9 +5493,10 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
    <p id="demo"></p>
 
    <script>
-   const myCollection = document.getElementsByTagName("p");
+      const myCollection = document.getElementsByTagName("p");
 
-   document.getElementById("demo").innerHTML = "This document contains " + myCollection.length + " paragraphs.";
+      document.getElementById("demo").innerHTML = "This document contains " + myCollection.length + " paragraphs.";
+   </script>
    ```
 
    <br>
@@ -5858,16 +5879,18 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
          <p id="demo"></p>
 
          <script>
-         function myFunction() {
-         let text;
-         let person = prompt("Please enter your name:", "Harry Potter");
-         if (person == null || person == "") {  // si es null o vacio ...
-            text = "User cancelled the prompt.";
-         } else {
-            text = "Hello " + person + "! How are you today?";
-         }
-         document.getElementById("demo").innerHTML = text;
-         }
+            function myFunction() {
+               let text;
+               let person = prompt("Please enter your name:", "Harry Potter");
+               if (person == null || person == "") {
+                  // si es null o vacio ...
+                  text = "User cancelled the prompt.";
+               } else {
+                  text = "Hello " + person + "! How are you today?";
+               }
+               document.getElementById("demo").innerHTML = text;
+            }
+         </script>
          ```
 
       ## **TIMING EVENTS - TEMPORIZADOR DE EVENTOS**
@@ -5885,10 +5908,11 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
          <button onclick="setTimeout(myFunction, 3000);">Try it</button>
 
          <script>
-         function myFunction() {
-         alert('Hello');
-         }
-         // se execute la alert 3 seconds after
+            function myFunction() {
+               alert("Hello");
+            }
+            // se execute la alert 3 seconds after
+         </script>
          ```
 
          <br>
@@ -6561,20 +6585,21 @@ Puede proporcionar una sintaxis fácil para código complejo.
    <p id="demo"></p>
 
    <script>
-   const x = document.getElementById("demo");
+      const x = document.getElementById("demo");
 
-   function getLocation() {
-   if (navigator.geolocation) {  // si el navegador puede usar geolocation entonces
-      navigator.geolocation.getCurrentPosition(showPosition);
-   } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
-   }
-   }
+      function getLocation() {
+         if (navigator.geolocation) {
+            // si el navegador puede usar geolocation entonces
+            navigator.geolocation.getCurrentPosition(showPosition);
+         } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+         }
+      }
 
-   function showPosition(position) {
-   x.innerHTML = "Latitude: " + position.coords.latitude +
-   "<br>Longitude: " + position.coords.longitude;
-   }
+      function showPosition(position) {
+         x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+      }
+   </script>
    ```
 
    <br>
@@ -6618,20 +6643,20 @@ Puede proporcionar una sintaxis fácil para código complejo.
    <p id="demo"></p>
 
    <script>
-   const x = document.getElementById("demo");
+      const x = document.getElementById("demo");
 
-   function getLocation() {
-   if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(showPosition);
-   } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
-   }
-   }
+      function getLocation() {
+         if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition);
+         } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+         }
+      }
 
-   function showPosition(position) {
-      x.innerHTML="Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
-   }
+      function showPosition(position) {
+         x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+      }
+   </script>
    ```
 
    <br>
@@ -6883,20 +6908,21 @@ La función se define en la **_onload_** propiedad del XMLHttpRequestobjeto
 
 ```html
 <div id="demo">
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">Change Content</button>
+   <h2>The XMLHttpRequest Object</h2>
+   <button type="button" onclick="loadDoc()">Change Content</button>
 </div>
 
 <script>
-function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() { // se define la function en onload
-    document.getElementById("demo").innerHTML =
-    this.responseText;
-  }
-  xhttp.open("GET", "ajax_info.txt", true);
-  xhttp.send();
-}
+   function loadDoc() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+         // se define la function en onload
+         document.getElementById("demo").innerHTML = this.responseText;
+      };
+      xhttp.open("GET", "ajax_info.txt", true);
+      xhttp.send();
+   }
+</script>
 ```
 
 <br>
@@ -6933,22 +6959,22 @@ function myFunction2(xhttp) {
 
 ```html
 <div id="demo">
-<h2>The XMLHttpRequest Object</h2>
-<button type="button" onclick="loadDoc()">Change Content</button>
+   <h2>The XMLHttpRequest Object</h2>
+   <button type="button" onclick="loadDoc()">Change Content</button>
 </div>
 
 <script>
-function loadDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML =
-      this.responseText;
-    }
-  };
-  xhttp.open("GET", "ajax_info.txt");
-  xhttp.send();
-}
+   function loadDoc() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+         if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+         }
+      };
+      xhttp.open("GET", "ajax_info.txt");
+      xhttp.send();
+   }
+</script>
 ```
 
 <br>
@@ -7112,33 +7138,29 @@ Este capítulo muestra algunas aplicaciones HTML que utilizan XML, HTTP, DOM y J
 -  Mostrar datos XML en una tabla HTML
 
 ```html
-<button type="button" onclick="loadXMLDoc()">Get my CD collection</button>
-<br><br>
+<button type="button" onclick="loadXMLDoc()">Get my CD collection</button> <br /><br />
 <table id="demo"></table>
 
 <script>
-function loadXMLDoc() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    const xmlDoc = xhttp.responseXML;
-    const cd = xmlDoc.getElementsByTagName("CD");
-    myFunction(cd)
-  }
-  xhttp.open("GET", "cd_catalog.xml");
-  xhttp.send();
-}
+   function loadXMLDoc() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+         const xmlDoc = xhttp.responseXML;
+         const cd = xmlDoc.getElementsByTagName("CD");
+         myFunction(cd);
+      };
+      xhttp.open("GET", "cd_catalog.xml");
+      xhttp.send();
+   }
 
-function myFunction(cd) {
-  let table="<tr><th>Artist</th><th>Title</th></tr>";
-  for (let i = 0; i < cd.length; i++) {
-    table += "<tr><td>" +
-    cd[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    cd[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-  }
-  document.getElementById("demo").innerHTML = table;
-}
+   function myFunction(cd) {
+      let table = "<tr><th>Artist</th><th>Title</th></tr>";
+      for (let i = 0; i < cd.length; i++) {
+         table += "<tr><td>" + cd[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + "</td><td>" + cd[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + "</td></tr>";
+      }
+      document.getElementById("demo").innerHTML = table;
+   }
+</script>
 ```
 
 <br>
