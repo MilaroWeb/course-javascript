@@ -5348,7 +5348,7 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 
    -  Agrega el nuevo elemento al elemento existente: `element.appendChild(para);`
 
-   -  Cabe aclarar que antes habian 2 `<p>` y `appenChild(para)` lo añadió al final. Si quieres que vaya al inicio usa `insertBefore()`
+   -  Cabe aclarar que antes habian 2 `<p>` y `appendChild(para)` lo añadió al final. Si quieres que vaya al inicio usa `insertBefore()`
 
       <br>
       <br>
